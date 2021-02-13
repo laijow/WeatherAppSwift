@@ -22,6 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let uiComponent: WeatherUIComponent = WeatherComponent()
         
         window?.rootViewController = WeatherTabBarController(component: uiComponent)
+        window?.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

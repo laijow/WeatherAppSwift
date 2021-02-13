@@ -16,6 +16,19 @@
 		1155023125D7A6EB00E7AA83 /* WeatherUIComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155023025D7A6EB00E7AA83 /* WeatherUIComponent.swift */; };
 		1155023625D7AA5600E7AA83 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155023525D7AA5600E7AA83 /* MapViewController.swift */; };
 		1155023A25D7AAA700E7AA83 /* PlacesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155023925D7AAA700E7AA83 /* PlacesListViewController.swift */; };
+		1155024525D7B3E200E7AA83 /* PlacesListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155024425D7B3E200E7AA83 /* PlacesListCell.swift */; };
+		1155024925D7B7E300E7AA83 /* PlacesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155024825D7B7E300E7AA83 /* PlacesListViewModel.swift */; };
+		1155024D25D7B81C00E7AA83 /* PlacesListCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155024C25D7B81C00E7AA83 /* PlacesListCellViewModel.swift */; };
+		1155025125D7B85900E7AA83 /* PlacesListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1155025025D7B85900E7AA83 /* PlacesListCell.xib */; };
+		1155025525D7BF4700E7AA83 /* PlacesListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155025425D7BF4700E7AA83 /* PlacesListConfigurator.swift */; };
+		1155025825D7BFEA00E7AA83 /* PlacesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155025725D7BFEA00E7AA83 /* PlacesListPresenter.swift */; };
+		1155025B25D7C01100E7AA83 /* PlacesListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155025A25D7C01100E7AA83 /* PlacesListInteractor.swift */; };
+		1155025E25D7C03200E7AA83 /* PlacesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155025D25D7C03200E7AA83 /* PlacesListRouter.swift */; };
+		1155026225D7C76F00E7AA83 /* MapPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155026125D7C76F00E7AA83 /* MapPresenter.swift */; };
+		1155026525D7C77700E7AA83 /* MapInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155026425D7C77700E7AA83 /* MapInteractor.swift */; };
+		1155026825D7C77D00E7AA83 /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155026725D7C77D00E7AA83 /* MapRouter.swift */; };
+		1155026B25D7C78600E7AA83 /* MapConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155026A25D7C78600E7AA83 /* MapConfigurator.swift */; };
+		1155026E25D7C78F00E7AA83 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1155026D25D7C78F00E7AA83 /* MapViewModel.swift */; };
 		F318173B3BDDD2FA5ED83D7C /* Pods_WeatherApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F2FCE71B1F16ED7276EFA2A /* Pods_WeatherApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +44,19 @@
 		1155023025D7A6EB00E7AA83 /* WeatherUIComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherUIComponent.swift; sourceTree = "<group>"; };
 		1155023525D7AA5600E7AA83 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		1155023925D7AAA700E7AA83 /* PlacesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewController.swift; sourceTree = "<group>"; };
+		1155024425D7B3E200E7AA83 /* PlacesListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListCell.swift; sourceTree = "<group>"; };
+		1155024825D7B7E300E7AA83 /* PlacesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListViewModel.swift; sourceTree = "<group>"; };
+		1155024C25D7B81C00E7AA83 /* PlacesListCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListCellViewModel.swift; sourceTree = "<group>"; };
+		1155025025D7B85900E7AA83 /* PlacesListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlacesListCell.xib; sourceTree = "<group>"; };
+		1155025425D7BF4700E7AA83 /* PlacesListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListConfigurator.swift; sourceTree = "<group>"; };
+		1155025725D7BFEA00E7AA83 /* PlacesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListPresenter.swift; sourceTree = "<group>"; };
+		1155025A25D7C01100E7AA83 /* PlacesListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListInteractor.swift; sourceTree = "<group>"; };
+		1155025D25D7C03200E7AA83 /* PlacesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesListRouter.swift; sourceTree = "<group>"; };
+		1155026125D7C76F00E7AA83 /* MapPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPresenter.swift; sourceTree = "<group>"; };
+		1155026425D7C77700E7AA83 /* MapInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapInteractor.swift; sourceTree = "<group>"; };
+		1155026725D7C77D00E7AA83 /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
+		1155026A25D7C78600E7AA83 /* MapConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapConfigurator.swift; sourceTree = "<group>"; };
+		1155026D25D7C78F00E7AA83 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
 		2A43392FAF6F305734DFE2E2 /* Pods-WeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.release.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		3F2FCE71B1F16ED7276EFA2A /* Pods_WeatherApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8B6F174771F3D2D05FA658 /* Pods-WeatherApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherApp.debug.xcconfig"; path = "Target Support Files/Pods-WeatherApp/Pods-WeatherApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -73,7 +99,6 @@
 				1155022725D7A4E500E7AA83 /* Component */,
 				115501EA25D7961200E7AA83 /* AppDelegate.swift */,
 				115501EC25D7961200E7AA83 /* SceneDelegate.swift */,
-				1155020025D7A1C700E7AA83 /* WeatherTabBarController.swift */,
 				1155022525D7A4AB00E7AA83 /* Resources */,
 			);
 			path = WeatherApp;
@@ -109,10 +134,72 @@
 		1155023425D7A76600E7AA83 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				1155023525D7AA5600E7AA83 /* MapViewController.swift */,
-				1155023925D7AAA700E7AA83 /* PlacesListViewController.swift */,
+				1155025325D7BC6500E7AA83 /* TabBar */,
+				1155024225D7B3B800E7AA83 /* Map */,
+				1155024125D7B3AF00E7AA83 /* PlacesList */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		1155024125D7B3AF00E7AA83 /* PlacesList */ = {
+			isa = PBXGroup;
+			children = (
+				1155024B25D7B7E700E7AA83 /* ViewModel */,
+				1155024325D7B3C900E7AA83 /* Cell */,
+				1155023925D7AAA700E7AA83 /* PlacesListViewController.swift */,
+				1155025425D7BF4700E7AA83 /* PlacesListConfigurator.swift */,
+				1155025725D7BFEA00E7AA83 /* PlacesListPresenter.swift */,
+				1155025A25D7C01100E7AA83 /* PlacesListInteractor.swift */,
+				1155025D25D7C03200E7AA83 /* PlacesListRouter.swift */,
+			);
+			path = PlacesList;
+			sourceTree = "<group>";
+		};
+		1155024225D7B3B800E7AA83 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				1155027125D7C79500E7AA83 /* ViewModel */,
+				1155023525D7AA5600E7AA83 /* MapViewController.swift */,
+				1155026A25D7C78600E7AA83 /* MapConfigurator.swift */,
+				1155026125D7C76F00E7AA83 /* MapPresenter.swift */,
+				1155026425D7C77700E7AA83 /* MapInteractor.swift */,
+				1155026725D7C77D00E7AA83 /* MapRouter.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		1155024325D7B3C900E7AA83 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1155024425D7B3E200E7AA83 /* PlacesListCell.swift */,
+				1155024C25D7B81C00E7AA83 /* PlacesListCellViewModel.swift */,
+				1155025025D7B85900E7AA83 /* PlacesListCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		1155024B25D7B7E700E7AA83 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1155024825D7B7E300E7AA83 /* PlacesListViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1155025325D7BC6500E7AA83 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1155020025D7A1C700E7AA83 /* WeatherTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		1155027125D7C79500E7AA83 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1155026D25D7C78F00E7AA83 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		94A7C79DDB9F98A21448382B /* Frameworks */ = {
@@ -191,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1155025125D7B85900E7AA83 /* PlacesListCell.xib in Resources */,
 				115501F725D7961700E7AA83 /* LaunchScreen.storyboard in Resources */,
 				115501F425D7961700E7AA83 /* Assets.xcassets in Resources */,
 			);
@@ -245,12 +333,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1155025E25D7C03200E7AA83 /* PlacesListRouter.swift in Sources */,
+				1155025825D7BFEA00E7AA83 /* PlacesListPresenter.swift in Sources */,
+				1155026225D7C76F00E7AA83 /* MapPresenter.swift in Sources */,
+				1155026B25D7C78600E7AA83 /* MapConfigurator.swift in Sources */,
 				1155023A25D7AAA700E7AA83 /* PlacesListViewController.swift in Sources */,
+				1155026825D7C77D00E7AA83 /* MapRouter.swift in Sources */,
+				1155025B25D7C01100E7AA83 /* PlacesListInteractor.swift in Sources */,
+				1155024925D7B7E300E7AA83 /* PlacesListViewModel.swift in Sources */,
+				1155024D25D7B81C00E7AA83 /* PlacesListCellViewModel.swift in Sources */,
+				1155026525D7C77700E7AA83 /* MapInteractor.swift in Sources */,
 				1155022925D7A4F800E7AA83 /* WeatherComponent.swift in Sources */,
+				1155026E25D7C78F00E7AA83 /* MapViewModel.swift in Sources */,
 				1155023625D7AA5600E7AA83 /* MapViewController.swift in Sources */,
+				1155024525D7B3E200E7AA83 /* PlacesListCell.swift in Sources */,
 				1155020125D7A1C700E7AA83 /* WeatherTabBarController.swift in Sources */,
 				1155023125D7A6EB00E7AA83 /* WeatherUIComponent.swift in Sources */,
 				115501EB25D7961200E7AA83 /* AppDelegate.swift in Sources */,
+				1155025525D7BF4700E7AA83 /* PlacesListConfigurator.swift in Sources */,
 				115501ED25D7961200E7AA83 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
