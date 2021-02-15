@@ -9,5 +9,7 @@ target 'WeatherApp' do
 
   pod 'Realm'
   pod 'SnapKit'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
 end

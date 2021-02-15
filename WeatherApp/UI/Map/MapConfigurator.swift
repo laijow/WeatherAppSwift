@@ -14,8 +14,11 @@ protocol MapConfigurator {
 class DefaultMapConfigurator: MapConfigurator {
     
     func configure(with viewController: MapViewController) {
+        let networkService = NetworkService()
+        let fetcher = NetworkDataFetcher(networking: networkService)
+        let fetcherService = DataFetcherService(networkDataFetcher: fetcher)
         let presenter = DefaultMapPresenter(view: viewController)
-        let interactor = DefaultMapInteractor(presenter: presenter)
+        let interactor = DefaultMapInteractor(presenter: presenter, fetcher: fetcherService)
         let router = DefaultMapRouter(viewController: viewController)
 
         viewController.presenter = presenter

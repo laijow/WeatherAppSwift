@@ -8,14 +8,18 @@
 import Foundation
 
 protocol MapRouter {
-    
+    func showDetail()
 }
 
 class DefaultMapRouter: MapRouter {
-    
+        
     weak var viewController: MapViewController!
     
     init(viewController: MapViewController) {
         self.viewController = viewController
+    }
+    
+    func showDetail() {
+        print("Show detail on router")
     }
 }
