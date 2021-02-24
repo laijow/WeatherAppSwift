@@ -23,11 +23,11 @@ class DetailWeatherViewModel {
         self.localService = localService
         self.cityName = weather.city!.name
         self.description = weather.weatherDescription
-        self.temperature = String(weather.temperature!.currentTemp)
+        self.temperature = weather.temperature!.currentTemp.temperatureString()
         self.iconURLString = String(format: "%@%@@2x.png", OpenWeatherAPI.imgURLString, weather.icon)
         self.minAndMaxTemp = String(format: "Min:%@ - Max:%@",
-                                    String(weather.temperature!.minTemp),
-                                    String(weather.temperature!.maxTemp))
+                                    weather.temperature!.minTemp.temperatureString(),
+                                    weather.temperature!.maxTemp.temperatureString())
     }
     
     func cellForRowAt(index: Int) -> (title: String, description: String) {

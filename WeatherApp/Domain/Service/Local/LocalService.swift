@@ -13,3 +13,7 @@ protocol LocalService {
     func deleate<T: Object>(object: T)
     func load<T>(object: T) -> Results<Object>
 }
+
+protocol WeatherLocalService: LocalService {
+    func updateLast(with newWeather: Weather)
+}

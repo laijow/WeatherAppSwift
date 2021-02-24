@@ -19,6 +19,8 @@ class MapViewController: UIViewController {
     var presenter: MapPresenter!
     var configurator: MapConfigurator!
     
+    private var segmentedControl: UISegmentedControl!
+    
     private let zoomOutTag: Int = 20
     private let zoomInTag: Int = 21
     private let defaultLocation = CLLocation(latitude: 55.7636, longitude: 37.6204)
@@ -40,6 +42,7 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        print(Realm.Configuration.defaultConfiguration.fileURL)
         configurator.configure(with: self)
         setupUI()
     }
@@ -51,6 +54,7 @@ class MapViewController: UIViewController {
         setupBottomView()
         setupPinImageView()
         setupButtons()
+        setupSegmentedControl()
     }
     
     @objc func showDetail(_ sender: UIButton) {
@@ -163,6 +167,37 @@ extension MapViewController {
         }
         
         bottomView.setupUI()
+    }
+    
+    private func setupSegmentedControl() {
+        if let type = AppSettings[.temperatureType] as? String {
+            segmentedControl = UISegmentedControl()
+            segmentedControl.insertSegment(withTitle: "Celsius", at: 0, animated: false)
+            segmentedControl.insertSegment(withTitle: "Fahrenheit", at: 1, animated: false)
+            segmentedControl.addTarget(self, action: #selector(segmentDidChanged(_ :)), for: .valueChanged)
+            var selectedIndex = 0
+            switch type {
+            case TemperatureType.fahrenheit.rawValue: selectedIndex = 1
+            default: break
+            }
+            segmentedControl.selectedSegmentIndex = selectedIndex
+            
+            navigationItem.titleView = segmentedControl
+        }
+        
+    }
+    
+    @objc private func segmentDidChanged(_ sender: UISegmentedControl) {
+        var newValue = ""
+        switch sender.selectedSegmentIndex {
+        case 0: newValue = TemperatureType.celsius.rawValue
+        case 1: newValue = TemperatureType.fahrenheit.rawValue
+        default:
+            break
+        }
+        
+        AppSettings[.temperatureType] = newValue
+        presenter.updateInfo()
     }
     
     @objc private func zoomTapped(_ sender: UIButton) {

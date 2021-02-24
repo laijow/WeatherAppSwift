@@ -14,7 +14,7 @@ struct PlacesListViewModel {
         
         init(cityName: String, temperature: Double) {
             self.cityName = cityName
-            self.temperature = String(temperature)
+            self.temperature = temperature.temperatureString()
         }
     }
     

@@ -29,7 +29,7 @@ class MapBottomView: UIView {
         temperatureLabel = UILabel()
         let defaultMargin: CGFloat = 16.0
         let labelMargin: CGFloat = 5.0
-        let temperatureLabelWidth: CGFloat = 70.0
+        let temperatureLabelWidth: CGFloat = 90.0
         let buttonSize: CGSize = CGSize(width: 40.0, height: 40.0)
         
         let detailButton = UIButton()

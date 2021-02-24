@@ -18,12 +18,12 @@ class DefaultMapInteractor: MapInteractor {
         
     weak var presenter: MapPresenter!
     
-    private let localService: LocalService
+    private let localService: WeatherLocalService
     private let fetcher: WeatherDataFetcher
     private let disposbag = DisposeBag()
     
     required init(presenter: MapPresenter,
-                  fetcher: WeatherDataFetcher, localService: LocalService) {
+                  fetcher: WeatherDataFetcher, localService: WeatherLocalService) {
         self.presenter = presenter
         self.fetcher = fetcher
         self.localService = localService
@@ -54,7 +54,7 @@ class DefaultMapInteractor: MapInteractor {
         lastWeather.date = weather.date
         lastWeather.isLast = true
         
-        localService.save(object: lastWeather)
+        localService.updateLast(with: lastWeather)
     }
     
     func getLastWeather() -> Weather? {

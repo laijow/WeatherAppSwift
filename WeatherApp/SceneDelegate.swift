@@ -20,6 +20,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let uiComponent: WeatherUIComponent = WeatherComponent()
         
+        if AppSettings[.temperatureType] == nil {
+            AppSettings[.temperatureType] = TemperatureType.celsius.rawValue
+        }
+        
         window?.rootViewController = WeatherTabBarController(component: uiComponent)
         window?.makeKeyAndVisible()
     }

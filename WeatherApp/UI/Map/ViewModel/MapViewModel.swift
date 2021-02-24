@@ -10,4 +10,9 @@ import Foundation
 struct MapViewModel {
     let cityName: String
     let temperature: String
+    
+    init(cityName: String, temperature: Double) {
+        self.cityName = cityName
+        self.temperature = temperature.temperatureString()
+    }
 }

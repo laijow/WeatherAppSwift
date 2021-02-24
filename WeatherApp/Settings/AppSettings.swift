@@ -11,7 +11,6 @@ public enum AppSettings {
 
     public enum key: String {
         case temperatureType
-        case lastWeather
     }
 
     public static subscript(_ key: key) -> Any? {

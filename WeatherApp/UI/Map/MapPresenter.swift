@@ -14,6 +14,7 @@ protocol MapPresenter: class {
     func updateWeatherData(_ weather: WeatherDTO)
     func saveLastWeather()
     func getLastWeather() -> Weather?
+    func updateInfo()
 }
 
 class DefaultMapPresenter: MapPresenter {
@@ -65,12 +66,12 @@ class DefaultMapPresenter: MapPresenter {
         interactor.saveLastWeather(weather)
     }
     
-    private func updateInfo() {
+    func updateInfo() {
         guard let weather = weather,
               let name = weather.city?.name,
               let temp = weather.temperature?.currentTemp else { return }
         let viewModel = MapViewModel(cityName: name,
-                                     temperature: String(temp))
+                                     temperature: temp)
         DispatchQueue.main.async { [weak self] in
             self?.view.updateInfo(with: viewModel)
         }
