@@ -8,19 +8,20 @@
 import UIKit
 import MapKit
 import SnapKit
+import RealmSwift
 
 protocol MapView: class {
-    
+    func updateInfo(with viewModel: MapViewModel)
 }
 
 class MapViewController: UIViewController {
 
     var presenter: MapPresenter!
     var configurator: MapConfigurator!
-    var viewModel: MapViewModel!
     
     private let zoomOutTag: Int = 20
     private let zoomInTag: Int = 21
+    private let defaultLocation = CLLocation(latitude: 55.7636, longitude: 37.6204)
     
     private var mapView: MKMapView! {
         didSet {
@@ -28,28 +29,31 @@ class MapViewController: UIViewController {
         }
     }
     
-    private var bottomView: MapBottomView!
+    private var bottomView: MapBottomView! {
+        didSet {
+            bottomView.isHidden = true
+        }
+    }
     private var pinImageView: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
         configurator.configure(with: self)
         setupUI()
     }
     
     private func setupUI() {
         
+        view.backgroundColor = .white
         setupMapView()
+        setupBottomView()
         setupPinImageView()
         setupButtons()
-        setupBottomView()
     }
     
     @objc func showDetail(_ sender: UIButton) {
-        print("show detail view controller")
         presenter.showDetail()
     }
 }
@@ -69,6 +73,19 @@ extension MapViewController {
             make.top.equalTo(view.snp.topMargin)
             make.bottom.equalTo(view.snp.bottomMargin)
         }
+        
+        let lastWeather = presenter.getLastWeather()
+        var location = defaultLocation
+        
+        if let weather = lastWeather,
+           let lat = weather.city?.latitude,
+           let lon = weather.city?.longitude {
+            location = CLLocation(latitude: lat, longitude: lon)
+        }
+        let delta = 0.075
+        let span = MKCoordinateSpan(latitudeDelta: delta, longitudeDelta: delta)
+        let region = MKCoordinateRegion(center: location.coordinate, span: span)
+        mapView.setRegion(region, animated: false)
     }
     
     private func setupPinImageView() {
@@ -134,7 +151,7 @@ extension MapViewController {
     private func setupBottomView() {
         
         let bottomViewHeight: CGFloat = 60.0
-        let bottomView = MapBottomView()
+        bottomView = MapBottomView()
                 
         view.addSubview(bottomView)
         
@@ -173,34 +190,18 @@ extension MapViewController {
 }
 
 extension MapViewController: MapView {
-    
+    func updateInfo(with viewModel: MapViewModel) {
+        bottomView.updateInfo(cityName: viewModel.cityName, temperature: viewModel.temperature)
+        bottomView.isHidden = false
+        presenter.saveLastWeather()
+    }
 }
 
 extension MapViewController: MKMapViewDelegate {
     
-    func mapViewDidFinishLoadingMap(_ mapView: MKMapView) {
-    
-    }
-    
-    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
-        
-    }
-    
-    func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-        print(mapView.region.center.latitude, mapView.region.center.longitude)
-    }
-    
-    func mapViewWillStartRenderingMap(_ mapView: MKMapView) {
-        
-        print("start")
-        
-    }
-    
-    func mapViewDidFinishRenderingMap(_ mapView: MKMapView, fullyRendered: Bool) {
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
         let lon = mapView.region.center.longitude
         let lat = mapView.region.center.latitude
         presenter.getWeather(with: lon, lat: lat)
-        print("finish")
     }
-    
 }

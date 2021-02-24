@@ -11,7 +11,6 @@ import SnapKit
 class MapBottomView: UIView {
         
     private var locationLabel: UILabel!
-    
     private var temperatureLabel: UILabel!
     
     override init(frame: CGRect) {
@@ -30,8 +29,8 @@ class MapBottomView: UIView {
         temperatureLabel = UILabel()
         let defaultMargin: CGFloat = 16.0
         let labelMargin: CGFloat = 5.0
-        let temperatureLabelWidth: CGFloat = 30.0
-        let buttonSize: CGSize = CGSize(width: 120.0, height: 40.0)
+        let temperatureLabelWidth: CGFloat = 70.0
+        let buttonSize: CGSize = CGSize(width: 40.0, height: 40.0)
         
         let detailButton = UIButton()
         
@@ -39,14 +38,11 @@ class MapBottomView: UIView {
                                action: #selector(MapViewController.showDetail(_:)),
                                for: .touchUpInside)
         
-        detailButton.setTitle("Подробнее", for: .normal)
-        detailButton.setTitleColor(.black, for: .normal)
+        detailButton.setImage(UIImage(systemName: "info.circle.fill"),
+                              for: .normal)
         
-        detailButton.backgroundColor = .lightGray
-        detailButton.layer.cornerRadius = 6.0
-        
-        locationLabel.text = "Moscow"
-        temperatureLabel.text = "-2"
+        temperatureLabel.font = .systemFont(ofSize: 17)
+        temperatureLabel.textColor = .lightGray
         
         addSubview(locationLabel)
         addSubview(temperatureLabel)
@@ -71,5 +67,10 @@ class MapBottomView: UIView {
             make.trailing.equalTo(temperatureLabel.snp.leading).offset(-labelMargin)
             make.bottom.equalTo(snp.bottom)
         }
+    }
+    
+    func updateInfo(cityName: String, temperature: String) {
+        locationLabel.text = cityName
+        temperatureLabel.text = temperature
     }
 }

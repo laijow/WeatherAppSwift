@@ -9,16 +9,26 @@ import Foundation
 
 struct PlacesListViewModel {
     struct Cell: PlacesListCellViewModel {
+        var cityName: String
+        var temperature: String
         
+        init(cityName: String, temperature: Double) {
+            self.cityName = cityName
+            self.temperature = String(temperature)
+        }
     }
     
-    private let cells: [Cell]?
+    private let cells: [Cell]
     
-    init(cells: [Cell]?) {
+    init(cells: [Cell]) {
         self.cells = cells
     }
     
     func numberOfItems() -> Int {
-        return cells?.count ?? 0
+        return cells.count
+    }
+    
+    func cellViewModelAt(index: Int) -> PlacesListCellViewModel {
+        return cells[index]
     }
 }

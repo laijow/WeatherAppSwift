@@ -8,4 +8,6 @@
 import Foundation
 
 protocol PlacesListCellViewModel {
+    var cityName: String { get }
+    var temperature: String { get }
 }

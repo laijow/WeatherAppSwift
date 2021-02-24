@@ -8,7 +8,7 @@
 import Foundation
 
 struct OpenWeatherAPI {
-    
-    static let apiKey = "a0e04ba65785c608a5b25be16a609a0d"
-    static let apiURLString = "https://pro.openweathermap.org/data/2.5/forecast/hourly"
+    static let apiKey = "ab275ff107c8bfb16b8c9c1cccf7ad1e"
+    static let apiURLString = "https://api.openweathermap.org/data/2.5/weather"
+    static let imgURLString = "http://openweathermap.org/img/wn/"
 }

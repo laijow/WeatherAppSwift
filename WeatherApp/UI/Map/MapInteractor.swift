@@ -10,18 +10,23 @@ import RxSwift
 
 protocol MapInteractor {
     func fetchWeather(with lon: Double, lat: Double)
+    func saveLastWeather(_ weather: Weather)
+    func getLastWeather() -> Weather?
 }
 
 class DefaultMapInteractor: MapInteractor {
         
     weak var presenter: MapPresenter!
     
+    private let localService: LocalService
     private let fetcher: WeatherDataFetcher
     private let disposbag = DisposeBag()
     
-    required init(presenter: MapPresenter, fetcher: WeatherDataFetcher) {
+    required init(presenter: MapPresenter,
+                  fetcher: WeatherDataFetcher, localService: LocalService) {
         self.presenter = presenter
         self.fetcher = fetcher
+        self.localService = localService
     }
     
     func fetchWeather(with lon: Double, lat: Double) {
@@ -36,7 +41,30 @@ class DefaultMapInteractor: MapInteractor {
         }).disposed(by: disposbag)
     }
     
-    private func fetchDidFinish(_ weather: WeatherModel) {
+    func saveLastWeather(_ weather: Weather) {
+        let lastWeather = Weather()
+        
+        lastWeather.city = weather.city
+        lastWeather.temperature = weather.temperature
+        lastWeather.humidity = weather.humidity
+        lastWeather.pressure = weather.pressure
+        lastWeather.icon = weather.icon
+        lastWeather.weatherDescription = weather.weatherDescription
+        lastWeather.windSpeed = weather.windSpeed
+        lastWeather.date = weather.date
+        lastWeather.isLast = true
+        
+        localService.save(object: lastWeather)
+    }
+    
+    func getLastWeather() -> Weather? {
+        let weathers = localService.load(object: Weather.self).filter("isLast = true")
+        
+        guard let weather = weathers.last as? Weather else { return nil }
+        return weather
+    }
+    
+    private func fetchDidFinish(_ weather: WeatherDTO) {
         presenter.updateWeatherData(weather)
     }
 }

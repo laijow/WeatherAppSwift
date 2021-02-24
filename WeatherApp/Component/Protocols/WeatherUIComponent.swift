@@ -10,4 +10,5 @@ import Foundation
 protocol WeatherUIComponent {
     func makeMapViewController() -> MapViewController
     func makePlacesListViewController() -> PlacesListViewController
+    func makeDetailWeatherViewController(_ weather: Weather) -> DetailWeatherViewController
 }

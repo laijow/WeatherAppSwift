@@ -5,21 +5,20 @@
 //  Created by Анатолий Ем on 13.02.2021.
 //
 
-import Foundation
+import UIKit
 
-protocol MapRouter {
-    func showDetail()
+protocol MapRouter: RootRouter {
+    
 }
 
 class DefaultMapRouter: MapRouter {
-        
-    weak var viewController: MapViewController!
     
-    init(viewController: MapViewController) {
+    var viewController: UIViewController?
+    internal let component: WeatherUIComponent
+    
+    init(viewController: MapViewController,
+         component: WeatherUIComponent) {
         self.viewController = viewController
-    }
-    
-    func showDetail() {
-        print("Show detail on router")
+        self.component = component
     }
 }

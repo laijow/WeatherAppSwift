@@ -5,17 +5,20 @@
 //  Created by Анатолий Ем on 13.02.2021.
 //
 
-import Foundation
+import UIKit
 
-protocol PlacesListRouter {
+protocol PlacesListRouter: RootRouter {
     
 }
 
 class DefaultPlacesListRouter: PlacesListRouter {
     
-    weak var viewController: PlacesListViewController!
-        
-    init(viewController: PlacesListViewController) {
+    var viewController: UIViewController?
+    var component: WeatherUIComponent
+    
+    init(viewController: PlacesListViewController,
+         component: WeatherUIComponent) {
         self.viewController = viewController
+        self.component = component
     }
 }

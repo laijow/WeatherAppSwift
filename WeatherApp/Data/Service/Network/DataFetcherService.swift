@@ -29,13 +29,14 @@ extension DataFetcherService: WeatherDataFetcher {
         let components = [
             "lon": "\(lon)",
             "lat": "\(lat)",
+            "units": "metric",
             "appid": OpenWeatherAPI.apiKey
         ]
         
         let url = buildGETMethodURL(components: components,
                                     defaultStringURL: OpenWeatherAPI.apiURLString)
         return networkDataFetcher.fetchGenericJSONData(url: url,
-                                                       type: WeatherModel.self,
+                                                       type: WeatherDTO.self,
                                                        method: .GET,
                                                        parameters: nil)
     }

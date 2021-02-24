@@ -30,11 +30,9 @@ class WeatherTabBarController: UITabBarController {
         tabBar.tintColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
         
         let mapViewController = component.makeMapViewController()
-        mapViewController.configurator = DefaultMapConfigurator()
-        mapViewController.viewModel = MapViewModel()
+        mapViewController.configurator = DefaultMapConfigurator(component: component)
         let placesListViewController = component.makePlacesListViewController()
-        placesListViewController.viewModel = PlacesListViewModel(cells: nil)
-        placesListViewController.configurator = DefaultPlacesListConfigurator()
+        placesListViewController.configurator = DefaultPlacesListConfigurator(component: component)
         
         let imageConfig = UIImage.SymbolConfiguration(weight: .medium)
         let mapImage = UIImage(systemName: "map", withConfiguration: imageConfig)!

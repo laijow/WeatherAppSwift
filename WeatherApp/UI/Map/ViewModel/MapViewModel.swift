@@ -7,6 +7,7 @@
 
 import Foundation
 
-class MapViewModel {
-    
+struct MapViewModel {
+    let cityName: String
+    let temperature: String
 }

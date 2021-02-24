@@ -13,10 +13,16 @@ protocol PlacesListConfigurator {
 
 class DefaultPlacesListConfigurator: PlacesListConfigurator {
     
+    private let component: WeatherUIComponent
+    
+    init(component: WeatherUIComponent) {
+        self.component = component
+    }
+    
     func cofigure(with viewController: PlacesListViewController) {
         let presenter = DefaultPlacesListPresenter(view: viewController)
-        let interactor = DefaultPlacesListInteractor(presenter: presenter)
-        let router = DefaultPlacesListRouter(viewController: viewController)
+        let interactor = DefaultPlacesListInteractor(presenter: presenter, localService: DefaultLocalService())
+        let router = DefaultPlacesListRouter(viewController: viewController, component: component)
         
         viewController.presenter = presenter
         presenter.interactor = interactor
