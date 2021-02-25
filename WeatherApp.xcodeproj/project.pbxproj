@@ -192,7 +192,7 @@
 		115501E925D7961200E7AA83 /* WeatherApp */ = {
 			isa = PBXGroup;
 			children = (
-				11D61DFE25E5F8BB0032EFDF /* Expensions */,
+				11D61DFE25E5F8BB0032EFDF /* Extensions */,
 				1113681425E4B3B600D926AF /* Settings */,
 				116282C825D8F01D008D85D8 /* Entities */,
 				116282AE25D8E186008D85D8 /* Domain */,
@@ -422,13 +422,13 @@
 			path = RootRouter;
 			sourceTree = "<group>";
 		};
-		11D61DFE25E5F8BB0032EFDF /* Expensions */ = {
+		11D61DFE25E5F8BB0032EFDF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				11D61DFF25E5F8E20032EFDF /* Date+Extensions.swift */,
 				11D61E0425E60A060032EFDF /* Double+Extensions.swift */,
 			);
-			path = Expensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		94A7C79DDB9F98A21448382B /* Frameworks */ = {
